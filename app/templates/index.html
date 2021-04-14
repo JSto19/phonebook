@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="banner">
+        <h3 class="header-text">Store your family and friends information with ease!</h3>
+    </div>
+
+    {% if current_user.is_authenticated %}
+    <h4>Hello, {{ current_user.username }}</h4>
+    {% else %}
+    <h4>Join Phonebook <a href="{{ url_for('register') }}">Like this here</a></h4>
+    {% endif %}
+{% endblock content %}
